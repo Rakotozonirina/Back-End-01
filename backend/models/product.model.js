@@ -3,21 +3,20 @@ const Schema = mongoose.Schema;
 
 const productSchema = new Schema(
     {
-        nom : {
-            type: String, required: true
-        },
-        description : {
-            type: String, required: true
-        },
-        prix : {
-            type: Number, required: true
-        }
+        name: String,
+        category: String,
+        description: String,
+        price: Number,
+        symbolcurrency: String,
+        imageURL: String,
+        availability: Boolean,
+        tags: [String]
     },
     {
         timestamps: true,
     }
 );
 
-const Product = mongoose.model('Product', productSchema);
+const Product = mongoose.model('products', productSchema);
 
 module.exports = Product;

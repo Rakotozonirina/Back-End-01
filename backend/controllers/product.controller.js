@@ -14,9 +14,9 @@ const getAllProduct = async (req, res) => {
 // Add a new product
 
 const addProduct = async (req, res) => {
-    const { nom, description, prix } = req.body;
+    const { name, category, description, price, symbolcurrency, imageURL, availability, tags } = req.body;
 
-    const newProduct = new Product({nom, description, prix});
+    const newProduct = new Product({name, category, description, price, symbolcurrency, imageURL, availability, tags});
 
     try{
         await newProduct.save();
